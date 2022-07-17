@@ -1,0 +1,123 @@
+{% extends "page.html" %}
+{% if announcement_home %}
+  {% set announcement = announcement_home %}
+{% endif %}
+
+{% block main %}
+<div class="container-fluid" style="background-color: #1B233A">
+  <div class="row">
+    <div class="col-sm-2">
+        <div class="row">
+            <div class="col-sm-12 grid-item">
+                <i class="fa fa-home home-icon"></i>&nbsp;&nbsp;Dashboard
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-10 grid-right">
+      <div class="grid-top">
+        <div class="project-area">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="extension-title">Add your first integration or data source</div>
+                </div>
+            </div>
+            <p>When you can create an integration or a data set, it will be accessible with one click in all of the team’s projects. Missing an integration? <a href="http://192.168.104.51/notebook"><b>Let us know!</b></a></p>
+            <br />
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/mysql.svg") }} height="24px"  alt="mysql" /></div>
+                    <div class="col-sm-8">MySQL</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle" aria-placeholder="123"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/postgresql.svg") }} height="24px"  alt="postgresql" /></div>
+                    <div class="col-sm-8">PostgreSQL</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/hive.svg") }} height="24px"  alt="hive" /></div>
+                    <div class="col-sm-8">Apache Hive</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/airflow.svg") }} height="24px"  alt="airflow" /></div>
+                    <div class="col-sm-8">Apache Airflow</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/druid.svg") }} height="24px"  alt="druid" /></div>
+                    <div class="col-sm-8">Apache Druid</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/duckdb.svg") }} height="24px"  alt="duckdb" /></div>
+                    <div class="col-sm-8">DuckDB</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/elasticsearch.svg") }} height="24px"  alt="elasticsearch" /></div>
+                    <div class="col-sm-8">Elasticsearch</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/minio.svg") }} width="16px"  alt="minio" /></div>
+                    <div class="col-sm-8">MinIO</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/mongodb.svg") }} width="16px"  alt="mongodb" /></div>
+                    <div class="col-sm-8">MongoDB</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/presto.svg") }} height="24px"  alt="presto" /></div>
+                    <div class="col-sm-8">Presto</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/trino.svg") }} width="24px"  alt="trino" /></div>
+                    <div class="col-sm-8">Trino</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/spark.svg") }} height="24px"  alt="spark" /></div>
+                    <div class="col-sm-8">Spark</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/yugabyte.svg") }} height="24px"  alt="yugabyte" /></div>
+                    <div class="col-sm-8">yugabyteDB</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro">
+                    <div class="col-sm-2 plugin-intro-logo"><img src={{ static_url("images/pinot.svg") }} width="18px"  alt="pinot" /></div>
+                    <div class="col-sm-8">Pinot</div>
+                    <div class="col-sm-2"><span class="fa fa-info-circle"></span></div>
+                </div>
+                <div class="col-sm-3 plugin-intro-empty">
+                    <a href="http://192.168.104.51/notebook"><b>Missing an integration?</b></a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main %}
+
+{% block script %}
+{{ super() }}
+<script type="text/javascript">
+require(["home"]);
+</script>
+{% endblock %}

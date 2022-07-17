@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700px" height="700px" viewBox="0 0 700 700" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>elixirhub</title>
+    <defs>
+        <linearGradient x1="154.404522%" y1="6.28869301%" x2="7.90211538e-14%" y2="92.7479734%" id="linearGradient-1">
+            <stop stop-color="#F7B500" offset="0%"></stop>
+            <stop stop-color="#B620E0" offset="100%"></stop>
+            <stop stop-color="#32C5FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="elixirhub" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Path-3" fill="url(#linearGradient-1)" points="118.844936 182.477855 118.844936 509.470144 180.704244 509.470144 180.704244 578.744285 582.066753 578.744285 582.066753 568.870168 295.096072 568.870168 295.096072 182.477855 391.426033 182.477855 391.426033 463.387234 582.066753 463.387234 582.066753 182.477855 512.371021 182.477855 512.371021 120.744285 180.704244 120.744285 180.704244 182.477855"></polygon>
+    </g>
+</svg>

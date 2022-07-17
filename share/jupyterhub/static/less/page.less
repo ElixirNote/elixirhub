@@ -1,0 +1,403 @@
+@import "../components/bootstrap/less/variables.less";
+
+@logo-height: 30px;
+
+#jupyterhub-logo {
+  @media (max-width: @grid-float-breakpoint) {
+    // same length as the navbar-toggle element, displayed on responsive mode
+    margin-left: 16px;
+  }
+  .jpy-logo {
+    height: @logo-height;
+    //margin-top: (@navbar-height - @logo-height) / 2;
+    margin-right: 16px;
+  }
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.navbarx {
+  position: relative;
+  min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+  //border-bottom: 1px solid rgb(214, 222, 230);
+  //padding-left: 18px;
+  //padding-right: 18px;
+  box-shadow: 0 1px 4px 0;
+
+  // Prevent floats from breaking the navbar
+  &:extend(.clearfix all);
+
+  @media (min-width: @grid-float-breakpoint) {
+    border-radius: @navbar-border-radius;
+  }
+}
+
+.navbar-navx {
+  > li > a {
+    color: #173249;
+
+    &:hover,
+    &:focus {
+      color: #3793ef;
+      background-color: @navbar-default-link-hover-bg;
+    }
+  }
+  > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: #3793ef;
+    }
+  }
+  > .disabled > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @navbar-default-link-disabled-color;
+      background-color: @navbar-default-link-disabled-bg;
+    }
+  }
+
+  // Dropdown menu items
+  // Remove background color from open dropdown
+  > .open > a {
+    &,
+    &:hover,
+    &:focus {
+      color: #3793ef;
+      background-color: @navbar-default-link-active-bg;
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint-max) {
+    // Dropdowns get custom display when collapsed
+    .open .dropdown-menu {
+      > li > a {
+        color: @navbar-default-link-color;
+        &:hover,
+        &:focus {
+          color: @navbar-default-link-hover-color;
+          background-color: @navbar-default-link-hover-bg;
+        }
+      }
+      > .active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: @navbar-default-link-active-color;
+          background-color: @navbar-default-link-active-bg;
+        }
+      }
+      > .disabled > a {
+        &,
+        &:hover,
+        &:focus {
+          color: @navbar-default-link-disabled-color;
+          background-color: @navbar-default-link-disabled-bg;
+        }
+      }
+    }
+  }
+}
+
+.navx {
+  padding-left: 0; // Override default ul/ol
+  margin-bottom: 0;
+  list-style: none;
+  &:extend(.clearfix all);
+
+  > li {
+    position: relative;
+    display: block;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: @nav-link-padding;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        // background-color: @nav-link-hover-bg;
+      }
+    }
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.disabled > a {
+      color: @nav-disabled-link-color;
+
+      &:hover,
+      &:focus {
+        color: @nav-disabled-link-hover-color;
+        text-decoration: none;
+        cursor: @cursor-disabled;
+        background-color: transparent;
+      }
+    }
+  }
+
+  // Open dropdowns
+  .open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: @nav-link-hover-bg;
+      border-color: @link-color;
+    }
+  }
+
+  // Nav dividers (deprecated with v3.0.1)
+  //
+  // This should have been removed in v3 with the dropping of `.nav-list`, but
+  // we missed it. We don't currently support this anywhere, but in the interest
+  // of maintaining backward compatibility in case you use it, it's deprecated.
+  .nav-divider {
+    .nav-divider();
+  }
+
+  // Prevent IE8 from misplacing imgs
+  //
+  // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+  > li > a > img {
+    max-width: none;
+  }
+}
+
+.navbar-right {
+  li {
+    span {
+      // same as .nav > li > a from bootstrap, but applied to the span[id="login_widget"]
+      // or any other span that matches .nav > li > span, but only in responsive mode
+      @media (max-width: @grid-float-breakpoint) {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+      }
+    }
+  }
+  margin-right: 16px;
+}
+
+#header {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.hidden {
+  display: none;
+}
+
+#progress-log {
+  margin-top: 8px;
+}
+
+.grid-top {
+  margin-top: 50px;
+}
+
+.grid-item {
+  display: flex;
+  height: 36px;
+  line-height: 20px;
+  font-size: 14px;
+  background-color: #2662EF;
+  color: #FFFFFF;
+  padding: 0 16px;
+  align-items: center;
+}
+
+.grid-item-white {
+  display: flex;
+  height: 32px;
+  line-height: 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 0 8px;
+  align-items: center;
+}
+
+.home-icon {
+  display: flex;
+  color: #FFFFFF;
+  align-items: center;
+  font-size: 17px;
+}
+
+.recent-project {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  height: 56px;
+}
+
+.extension-title {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  height: 56px;
+}
+
+.card-intro {
+  background-color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 10px 24px 10px 25px;
+  border-style: solid;
+  border-color: #e2e8f0;
+  border-width: 1px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.plugin-intro {
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 15px 0;
+  height: 50px;
+  border-style: solid;
+  border-color: #e2e8f0;
+  border-width: 1px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.plugin-intro-logo {
+  background-color: #f6f9fa;
+  height: 48px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plugin-intro-empty {
+  cursor: pointer;
+  padding: 15px 0;
+  margin-left: 50px;
+  margin-bottom: 40px;
+}
+
+.new-button {
+  padding: 2px 8px;
+  background-color: #1EAEA5;
+  color: #FFFFFF;
+  border-radius: 2px;
+  border: none;
+}
+
+.tip-text {
+  font-size: 13px;
+  color: #3B4859;
+}
+
+.learn-it {
+  font-weight: 400;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #2662EF;
+  display: flex;
+  align-items: center;
+  line-height: 24px;
+}
+
+.card-project {
+  background-color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 20px 24px 20px 25px;
+  border-style: solid;
+  border-color: #e2e8f0;
+  border-width: 1px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.project-area {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.project-button {
+  background-color: #3693ef;
+  font-size: 12px;
+  align-items: end;
+  float: right;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  margin-top: 15px;
+}
+
+.start-project {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  color: #2662EF;
+}
+
+.fa-project {
+  color: #d6dee6;
+}
+
+.timing-project {
+  font-size: 12px;
+  line-height: 14px;
+  color: #5b5b62;
+}
+
+.state-project {
+  font-size: 11px;
+  color: #17161680;
+  margin-top: 7px;
+}
+
+.grid-right {
+  background-color: #f6f9fa;
+  min-height: calc(100vh - 56px);
+  border-left: 1px solid rgb(214, 222, 230);
+}
+
+.grid-right-spawn {
+  background-color: #f6f9fa;
+  min-height: calc(100vh - 56px);
+  border-left: 1px solid rgb(214, 222, 230);
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.grid-right-empty {
+  background-color: #f6f9fa;
+  min-height: calc(100vh - 56px);
+}
+
+.row-gap-column {
+  margin-top: 15px;
+}
+
+.empty-left-bar {
+  min-height: calc(100vh - 56px);
+  background-color: #1B233A;
+}
+
+.progress-log-event {
+  border-top: 1px solid #e7e7e7;
+  padding: 8px;
+}
+
+.feedback {
+  &-container {
+    margin-top: 16px;
+  }
+
+  &-widget {
+    padding: 5px 0px 0px 6px;
+    i {
+      font-size: 2em;
+      color: lightgrey;
+    }
+  }
+}
