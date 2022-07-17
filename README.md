@@ -7,12 +7,12 @@
 
 # ElixirHub
 
-With [JupyterHub](https://jupyterhub.readthedocs.io) you can create a
+With [ElixirHub](https://ciusji.gitbook.io/elixirnote/guides/elixirnote-hub) you can create a
 **multi-user Hub** that spawns, manages, and proxies multiple instances of the
-single-user [Jupyter notebook](https://jupyter-notebook.readthedocs.io)
+single-user [ElixirNote](https://ciusji.gitbook.io/elixirnote/)
 server.
 
-[Project Jupyter](https://jupyter.org) created JupyterHub to support many
+[Project ElixirNote](https://github.com/ElixirNote) created ElixirHub to support many
 users. The Hub can offer notebook servers to a class of students, a corporate
 data science workgroup, a scientific research project, or a high-performance
 computing group.
@@ -35,11 +35,11 @@ computing group.
 
 ## Technical overview
 
-Three main actors make up JupyterHub:
+Three main actors make up ElixirHub:
 
 - multi-user **Hub** (tornado process)
 - configurable http **proxy** (node-http-proxy)
-- multiple **single-user Jupyter notebook servers** (Python/Jupyter/tornado)
+- multiple **single-user ElixirNote servers** (Python/Jupyter/tornado)
 
 Basic principles for operation are:
 
@@ -49,11 +49,6 @@ Basic principles for operation are:
 - Hub configures proxy to forward URL prefixes to the single-user notebook
   servers.
 
-JupyterHub also provides a
-[REST API][]
-for administration of the Hub and its users.
-
-[rest api]: https://juptyerhub.readthedocs.io/en/latest/reference/rest-api.html
 
 ## Installation
 
@@ -77,7 +72,7 @@ for administration of the Hub and its users.
 
 #### Using `pip` locally
 
-JupyterHub can be installed with `pip`, and the proxy with `npm`:
+ElixirHub can be installed with `pip`, and the proxy with `npm`:
 
 ```bash
 git clone git@github.com:ElixirNote/elixirhub.git
@@ -86,35 +81,33 @@ pip3 install jhub_cas_authenticator
 cd jupyterhub
 pip3 install .
 ```
-If any problems, please contact Bingqi_Ji.
+If any problems, please contact bqjimaster@gmail.com.
 
 ### Run the Hub server
 
 To start the Hub server, run the command:
 
-    jupyterhub
+    elixirhub
 
 Visit `http://localhost:8000` in your browser, and sign in with your system username and password.
 
 _Note_: To allow multiple users to sign in to the server, you will need to
-run the `jupyterhub` command as a _privileged user_, such as root.
-The [wiki](https://github.com/jupyterhub/jupyterhub/wiki/Using-sudo-to-run-JupyterHub-without-root-privileges)
-describes how to run the server as a _less privileged user_, which requires
-more configuration of the system.
+run the `elixirhub` command as a _privileged user_, such as root.
+
 
 ## Configuration
 
-The [Getting Started](https://jupyterhub.readthedocs.io/en/latest/getting-started/index.html) section of the
-documentation explains the common steps in setting up JupyterHub.
+The [Getting Started](https://ciusji.gitbook.io/elixirnote/guides/elixirnote-hub/get-started) section of the
+documentation explains the common steps in setting up ElixirHub.
 
-The [**JupyterHub tutorial**](https://github.com/jupyterhub/jupyterhub-tutorial)
-provides an in-depth video and sample configurations of JupyterHub.
+The [**ElixirHub tutorial**](https://ciusji.gitbook.io/elixirnote/guides/elixirnote-hub/get-started)
+provides an in-depth video and sample configurations of ElixirHub.
 
 ### Start the Hub
 
 To start the Hub on a specific url and port `10.0.1.2:443` with **https**:
 
-    jupyterhub --ip 10.0.1.2 --port 443 --ssl-key my_ssl.key --ssl-cert my_ssl.cert
+    elixirhub --ip 10.0.1.2 --port 443 --ssl-key my_ssl.key --ssl-cert my_ssl.cert
 
 ### Authenticators
 
@@ -140,24 +133,24 @@ To start the Hub on a specific url and port `10.0.1.2:443` with **https**:
 
 ## Docker
 
-A starter [**docker image for JupyterHub**](https://hub.docker.com/r/jupyterhub/jupyterhub/)
+A starter [**docker image for ElixirHub**](https://hub.docker.com/r/jupyterhub/jupyterhub/)
 gives a baseline deployment of JupyterHub using Docker.
 
-**Important:** This `jupyterhub/jupyterhub` image contains only the Hub itself,
+**Important:** This `ElixirNote/elixirhub` image contains only the Hub itself,
 with no configuration. In general, one needs to make a derivative image, with
-at least a `jupyterhub_config.py` setting up an Authenticator and/or a Spawner.
+at least a `elixirhub_config.py` setting up an Authenticator and/or a Spawner.
 To run the single-user servers, which may be on the same system as the Hub or
-not, Jupyter Notebook version 4 or greater must be installed.
+not, ElixirNote version 4 or greater must be installed.
 
 The JupyterHub docker image can be started with the following command:
 
-    docker run -p 8000:8000 -d --name jupyterhub jupyterhub/jupyterhub jupyterhub
+    docker run -p 8000:8000 -d --name elixirhub ElixirNote/elixirhub elixirhub
 
-This command will create a container named `jupyterhub` that you can
+This command will create a container named `elixirhub` that you can
 **stop and resume** with `docker stop/start`.
 
 The Hub service will be listening on all interfaces at port 8000, which makes
-this a good choice for **testing JupyterHub on your desktop or laptop**.
+this a good choice for **testing ElixirHub on your desktop or laptop**.
 
 If you want to run docker on a computer that has a public IP then you should
 (as in MUST) **secure it with ssl** by adding ssl options to your docker
@@ -167,28 +160,25 @@ configuration or by using a ssl enabled proxy.
 allow you to **store data outside the docker image (host system) so it will be persistent**, even when you start
 a new image.
 
-The command `docker exec -it jupyterhub bash` will spawn a root shell in your docker
+The command `docker exec -it elixirhub bash` will spawn a root shell in your docker
 container. You can **use the root shell to create system users in the container**.
-These accounts will be used for authentication in JupyterHub's default configuration.
+These accounts will be used for authentication in ElixrHub's default configuration.
 
 ## Contributing
 
-If you would like to contribute to the project, please read our
-[contributor documentation](https://jupyter.readthedocs.io/en/latest/contributing/content-contributor.html)
-and the [`CONTRIBUTING.md`](CONTRIBUTING.md). The `CONTRIBUTING.md` file
+If you would like to contribute to the project, please read our 
+[`CONTRIBUTING.md`](CONTRIBUTING.md). The `CONTRIBUTING.md` file
 explains how to set up a development installation, how to run the test suite,
 and how to contribute to documentation.
 
-For a high-level view of the vision and next directions of the project, see the
-[JupyterHub community roadmap](docs/source/contributing/roadmap.md).
 
 ### A note about platform support
 
-JupyterHub is supported on Linux/Unix based systems.
+ElixirHub is supported on Linux/Unix based systems.
 
-JupyterHub officially **does not** support Windows. You may be able to use
-JupyterHub on Windows if you use a Spawner and Authenticator that work on
-Windows, but the JupyterHub defaults will not. Bugs reported on Windows will not
+ElixirHub officially **does not** support Windows. You may be able to use
+ElixirHub on Windows if you use a Spawner and Authenticator that work on
+Windows, but the ElixirHub defaults will not. Bugs reported on Windows will not
 be accepted, and the test suite will not run on Windows. Small patches that fix
 minor Windows compatibility issues (such as basic installation) **may** be accepted,
 however. For Windows-based systems, we would recommend running JupyterHub in a
@@ -196,12 +186,14 @@ docker container or Linux VM.
 
 [Additional Reference:](http://www.tornadoweb.org/en/stable/#installation) Tornado's documentation on Windows platform support
 
+
 ## License
 
 We use a shared copyright model that enables all contributors to maintain the
 copyright on their contributions.
 
 All code is licensed under the terms of the [revised BSD license](./COPYING.md).
+
 
 ## Help and resources
 
