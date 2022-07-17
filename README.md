@@ -22,7 +22,7 @@ computing group.
 
 ### Dashboard
 
-![dashboard](/share/jupyterhub/static/images/dashbaord.png)
+![dashboard](/share/jupyterhub/static/images/dashboard.png)
 
 ### Extensions
 
