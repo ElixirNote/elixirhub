@@ -4,22 +4,21 @@
 {% endif %}
 
 {% block main %}
-<div class="container-fluid" style="background-color: #1B233A">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-2 grid-left">
         <div class="row">
             <div class="col-sm-12 grid-item" id="hub-home">
-                <i class="fa fa-home home-icon"></i>&nbsp;&nbsp;Dashboard
             </div>
         </div>
     </div>
-    <div class="col-sm-10 grid-right">
+    <div class="col-sm-8 grid-right">
       <div class="grid-top">
           <div class="card-intro">
             <div class="row">
                 <span><button class="new-button">New ✨</button></span>
                 <span class="tip-text">&nbsp;&nbsp;A few of tips in 5 minutes help you learn more about ElixirNote.</span>
-                <span style="float: right;"><a class="learn-it" href="https://confluence.idgcapital.com/pages/viewpage.action?pageId=32997926" target="_blank">Learn it →</a></span>
+                <span style="float: right;"><a class="learn-it" href="https://ciusji.gitbook.io/elixirnote/guides/elixirnote-hub" target="_blank">Learn it →</a></span>
             </div>
           </div>
         <div class="project-area">
@@ -70,6 +69,7 @@
         </div>
       </div>
     </div>
+    <div class="col-sm-2 grid-left"></div>
   </div>
   {% if allow_named_servers %}
   <h2>

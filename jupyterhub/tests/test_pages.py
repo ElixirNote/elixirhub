@@ -1004,7 +1004,7 @@ async def test_static_files(app):
     r.raise_for_status()
     assert r.headers['content-type'] == 'image/png'
     r = await async_requests.get(
-        ujoin(base_url, 'static', 'images', 'jupyterhub-80.png')
+        ujoin(base_url, 'static', 'images', 'elixirhub.scg')
     )
     r.raise_for_status()
     assert r.headers['content-type'] == 'image/png'

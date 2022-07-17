@@ -4,7 +4,7 @@
 ARG BASE_IMAGE=jupyter/base-notebook
 FROM $BASE_IMAGE
 
-MAINTAINER IDG Notebook <bqjimaster@gmail.com>
+MAINTAINER <bqjimaster@gmail.com>
 
 ADD install_jupyterhub /tmp/install_jupyterhub
 ARG JUPYTERHUB_VERSION=git:HEAD

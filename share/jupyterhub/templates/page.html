@@ -27,7 +27,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>{% block title %}IDG Notebook{% endblock %}</title>
+    <title>{% block title %}ElixirHub{% endblock %}</title>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -100,21 +100,11 @@
 {% block nav_bar %}
   <nav class="navbarx">
     <div>
-    {% if user %}
-      <div class="navbar-header col-sm-2" style="background-color: #1B233A; display: flex; align-items: center; height: 56px;">
-        <span id="jupyterhub-logo" class="pull-left">
-            <a href="{{logo_url or base_url}}"><img src="{{ static_url("images/notebook.svg") }}" alt='idg-notebook' class='jpy-logo' title='Home'/></a>Notebook
+      <div class="navbar-header col-sm-2" style="display: flex; align-items: center; height: 56px;">
+        <span id="jupyterhub-logo" class="pull-left" style="color: #051b38">
+            <a href="{{logo_url or base_url}}"><img src="{{ static_url("images/elixirhub.svg") }}" alt='idg-notebook' class='jpy-logo' title='Home'/></a>ElixirHub
         </span>
       </div>
-    {% else %}
-      <div class="navbar-header col-sm-2" style="color: #1B233A; display: flex; align-items: center; height: 56px;">
-        <span id="jupyterhub-logo" class="pull-left">
-            <a href="{{logo_url or base_url}}"><img src="{{ static_url("images/notebook.svg") }}" alt='idg-notebook' class='jpy-logo' title='Home'/></a>Notebook
-        </span>
-      </div>
-    {% endif %}
-
-
       <div class="collapse navbar-collapse" id="thenavbar">
         <ul class="nav navbar-nav navbar-right">
           {% block nav_bar_right_items %}

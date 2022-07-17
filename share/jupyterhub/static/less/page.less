@@ -19,10 +19,10 @@
 .navbarx {
   position: relative;
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  //border-bottom: 1px solid rgb(214, 222, 230);
+  border-bottom: 1px solid rgb(214, 222, 230);
   //padding-left: 18px;
   //padding-right: 18px;
-  box-shadow: 0 1px 4px 0;
+  //box-shadow: 0 1px 4px 0;
 
   // Prevent floats from breaking the navbar
   &:extend(.clearfix all);
@@ -198,8 +198,7 @@
   height: 36px;
   line-height: 20px;
   font-size: 14px;
-  background-color: #2662EF;
-  color: #FFFFFF;
+  color: #051b38;
   padding: 0 16px;
   align-items: center;
 }
@@ -216,7 +215,7 @@
 
 .home-icon {
   display: flex;
-  color: #FFFFFF;
+  color: #051b38;
   align-items: center;
   font-size: 17px;
 }
@@ -355,8 +354,11 @@
   margin-top: 7px;
 }
 
+.grid-left {
+  min-height: calc(100vh - 56px);
+}
+
 .grid-right {
-  background-color: #f6f9fa;
   min-height: calc(100vh - 56px);
   border-left: 1px solid rgb(214, 222, 230);
 }

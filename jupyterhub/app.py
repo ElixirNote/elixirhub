@@ -744,7 +744,7 @@ class JupyterHub(Application):
     @default('logo_file')
     def _logo_file_default(self):
         return os.path.join(
-            self.data_files_path, 'static', 'images', 'jupyterhub-80.png'
+            self.data_files_path, 'static', 'images', 'elixirhub.svg'
         )
 
     jinja_environment_options = Dict(
