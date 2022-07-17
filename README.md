@@ -17,6 +17,22 @@ users. The Hub can offer notebook servers to a class of students, a corporate
 data science workgroup, a scientific research project, or a high-performance
 computing group.
 
+
+## Screenshot & Gits
+
+### Dashboard
+
+![dashboard](/share/jupyterhub/static/images/dashbaord.png)
+
+### Extensions
+
+![extensions](/share/jupyterhub/static/images/extensions.png)
+
+### ElixirNote Launch
+
+![launch](/share/jupyterhub/static/images/launch.png)
+
+
 ## Technical overview
 
 Three main actors make up JupyterHub:
